@@ -24,7 +24,7 @@ void SendPlayerData()
 	GetPrestrafeJSONString(message, sizeof(message));
 	
 	char url[512];
-	Format(url, sizeof(url), "http://%s:%i/ServerUpdate", gC_HostName, gI_Port);
+	Format(url, sizeof(url), "http://%s:%i/sm/update", gC_HostName, gI_Port);
 	Handle hRequest = SteamWorks_CreateHTTPRequest(k_EHTTPMethodPOST, url);
 
 	bool settimeout = SteamWorks_SetHTTPRequestNetworkActivityTimeout(hRequest, 10);
